@@ -4,6 +4,7 @@ const colors = require("colors");
 const { dbConnect } = require("./config/db.connect");
 
 const invoicesRoutes = require("./routes/invoices");
+const usersRoutes = require("./routes/users");
 require("dotenv").config();
 
 const app = express();
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 
 // invoices routes
 app.use("/api/invoices", invoicesRoutes);
+app.use("/api/users", usersRoutes);
 
 const PORT = process.env.PORT || 5000;
 
